@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { motion } from "framer-motion";
 
 interface ICircleProgressProps {
@@ -15,15 +14,9 @@ export const CircleProgress: React.FC<ICircleProgressProps> = ({
   const strokeWidth = size / 7;
   const radius = size / 2 - strokeWidth / 2;
 
-  const strokeClassName = classNames(
-    "stroke-current",
-    `text-${color}-500`,
-    `dark:text-${color}-400`
-  );
-
   return (
     <svg
-      className={`w-40 h-40`}
+      className={`w-20 h-20 md:w-40 md:h-40`}
       viewBox={`0 0 ${size} ${size}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -35,11 +28,11 @@ export const CircleProgress: React.FC<ICircleProgressProps> = ({
         r={radius}
         fill="none"
         strokeWidth={strokeWidth}
-        className="stroke-gray-500"
+        className="stroke-custom-purple-700"
       />
 
       <motion.circle
-        className={strokeClassName}
+        className={color}
         cx={size / 2}
         cy={size / 2}
         r={radius}

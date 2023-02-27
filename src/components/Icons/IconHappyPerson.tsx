@@ -1,6 +1,6 @@
-interface IconAdditionProps extends React.ComponentPropsWithoutRef<"svg"> {}
+interface IconHappyPersonProps extends React.ComponentPropsWithoutRef<"svg"> {}
 
-export const IconAddition = (props: IconAdditionProps) => (
+export const IconHappyPerson = (props: IconHappyPersonProps) => (
   <svg
     width={54}
     height={55}

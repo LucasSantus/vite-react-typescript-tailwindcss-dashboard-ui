@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { FC } from "react";
+import { FC, useMemo } from "react";
+import { formatterNumbers } from "../../../utils/formatterNumbers";
+
 interface IItemProps {
   title: string;
   value: number;
@@ -7,12 +9,16 @@ interface IItemProps {
 }
 
 export const ItemStatistics: FC<IItemProps> = ({ title, value, color }) => {
+  const valueFormatted = useMemo(() => {
+    return formatterNumbers(value, 1);
+  }, [value]);
+
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex gap-1 text-white font-inter text-sm font-medium">
       <div className={classNames("h-4 w-4 rounded-full", color)}></div>
-      <span>
-        {title} {value}
-      </span>
+      <div>
+        {title} {valueFormatted}
+      </div>
     </div>
   );
 };
