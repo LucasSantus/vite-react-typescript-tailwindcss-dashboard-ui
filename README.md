@@ -44,7 +44,9 @@ Used tools:
 - [React v18.2.0](https://pt-br.reactjs.org/)
 - [TypeScript v4.6.4](https://www.typescriptlang.org/)
 - [Vite v3.2.4](https://vitejs.dev/)
-- [TailwindCSS v3.2.4](https://tailwindcss.com/docs/installation)
+- [TailwindCSS v3.2.7](https://tailwindcss.com/docs/installation)
+- [ClassNames v2.3.2](https://www.npmjs.com/package/classnames)
+- [Framer Motion v10.0.0](https://www.npmjs.com/package/framer-motion)
 
 --------------------------------------------------------------------------------------
 
