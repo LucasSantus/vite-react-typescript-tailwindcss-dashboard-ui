@@ -1,5 +1,6 @@
 import { Card } from "../Card";
 import { IconPolygon } from "../Icons/IconPolygon";
+import { SimpleGraph } from "../SimpleGraph";
 import { InfoOfTheDay } from "./components/InfoOfTheDay";
 
 export const Sales: React.FC = () => {
@@ -27,8 +28,7 @@ export const Sales: React.FC = () => {
           </div>
 
           <div>
-            {/* Graph */}
-            GRÁFICO
+            <SimpleGraph />
           </div>
         </div>
       </div>
