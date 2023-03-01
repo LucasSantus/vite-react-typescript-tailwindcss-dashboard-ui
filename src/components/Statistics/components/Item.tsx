@@ -6,12 +6,20 @@ interface IItemProps {
   title: string;
   value: number;
   color: string;
+  type: "money" | "integer";
 }
 
-export const ItemStatistics: FC<IItemProps> = ({ title, value, color }) => {
+export const ItemStatistics: FC<IItemProps> = ({
+  title,
+  value,
+  color,
+  type,
+}) => {
   const valueFormatted = useMemo(() => {
+    if (type === "integer") return value;
+
     return formatterNumbers(value, 1);
-  }, [value]);
+  }, [value, type]);
 
   return (
     <div className="flex gap-1 text-white font-inter text-sm font-medium">

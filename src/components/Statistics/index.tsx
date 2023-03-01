@@ -3,21 +3,27 @@ import { Card } from "../Card";
 import { CircleProgress } from "../CircleProgress";
 import { ItemStatistics } from "./components/Item";
 
-interface IStatisticsProps {
-  title: string;
+interface IDataType {
   expected: number;
   reached: number;
+  type: "money" | "integer";
+}
+
+interface IStatisticsProps {
+  title: string;
+  data: IDataType;
   backgroundColor: string;
   strokeColor: string;
 }
 
 export const Statistics: FC<IStatisticsProps> = ({
   title,
-  expected,
-  reached,
+  data,
   backgroundColor,
   strokeColor,
 }) => {
+  const { reached, expected, type } = data;
+
   const percentage = useMemo(() => {
     const value = (reached / expected) * 100;
 
@@ -30,7 +36,7 @@ export const Statistics: FC<IStatisticsProps> = ({
     <Card>
       <div className="py-7 md:px-12">
         <div className="flex flex-col items-center justify-between gap-4">
-          <span className="font-inter font-semibold text-2xl text-white">
+          <span className="font-inter font-semibold text-2xl text-white flex items-center justify-center">
             {title}
           </span>
           <div className="relative">
@@ -52,11 +58,13 @@ export const Statistics: FC<IStatisticsProps> = ({
               title="Esperado"
               value={expected}
               color={"bg-custom-purple-700"}
+              type={type}
             />
             <ItemStatistics
               title="Alcançado"
               value={reached}
               color={backgroundColor}
+              type={type}
             />
           </div>
         </div>
