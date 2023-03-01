@@ -10,8 +10,8 @@ export const Sales: React.FC = () => {
         <span className="text-white font-inter text-2xl">
           Vendas por dia da semana
         </span>
-        <div className="grid grid-cols-2 pt-8">
-          <div className="flex flex-col gap-2">
+        <div className="grid sm:grid-cols-2 grid-cols-1 pt-8">
+          <div className="flex flex-col gap-2 sm:justify-center sm:items-start items-center">
             <InfoOfTheDay
               dailySale="Dia com mais vendas"
               weekday="quarta-feira"
@@ -27,7 +27,7 @@ export const Sales: React.FC = () => {
             />
           </div>
 
-          <div>
+          <div className="pt-10">
             <SimpleGraph />
           </div>
         </div>

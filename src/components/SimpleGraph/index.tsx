@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 interface IDaysType {
   day: string;
   value: number;
@@ -47,8 +45,10 @@ export const SimpleGraph: React.FC = () => {
   };
 
   return (
-    <div className="h-full">
-      <div className="flex justify-between items-end h-full">
+    <div className="relative h-full  flex items-center">
+      <div className="w-full bg-[#4A4556] h-[3px]" />
+
+      <div className="absolute flex justify-between items-end h-full overflow-auto z-10 inset-0">
         {DAYS.map((item) => {
           const value = calcularValor(item.value);
 
@@ -62,10 +62,7 @@ export const SimpleGraph: React.FC = () => {
               className="flex flex-col justify-center items-center"
             >
               <div
-                className={classNames(
-                  // height,
-                  "bg-custom-cyan-600 w-[15px] rounded-full"
-                )}
+                className={"bg-custom-cyan-600 w-[15px] rounded-full"}
                 style={divStyle}
               />
               <span className="font-inter font-medium text-sm text-white">
