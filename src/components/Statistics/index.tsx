@@ -1,20 +1,8 @@
 import { FC, useMemo } from "react";
 import { Card } from "../Card";
 import { CircleProgress } from "../CircleProgress";
-import { ItemStatistics } from "./components/Item";
-
-interface IDataType {
-  expected: number;
-  reached: number;
-  type: "money" | "integer";
-}
-
-interface IStatisticsProps {
-  title: string;
-  data: IDataType;
-  backgroundColor: string;
-  strokeColor: string;
-}
+import { ItemStatistics } from "./components/ItemStatistics";
+import { IStatisticsProps } from "./types";
 
 export const Statistics: FC<IStatisticsProps> = ({
   title,
