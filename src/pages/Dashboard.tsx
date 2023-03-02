@@ -4,10 +4,10 @@ import { Statistics } from "../components/Statistics";
 
 export const Dashboard = () => {
   return (
-    <div className="w-screen sm:h-screen h-full p-5 bg-custom-purple-800">
+    <div className="w-screen h-screen bg-custom-purple-800">
       <div className="sm:flex sm:justify-center sm:items-center h-full">
         <div className="container grid-cols-1 mx-auto px-4 grid gap-5 max-w-[1200px]">
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-5 ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-5">
             <Score />
 
             <Statistics
